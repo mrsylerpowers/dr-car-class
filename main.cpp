@@ -60,10 +60,10 @@ void handlePromptLine(string basic_string) {
         exit(EXIT_SUCCESS);
     }
     else{
-        cout << endl;
+
         exec_prog(getArgVfromString(basic_string.c_str()));
     }
-    cout << endl;
+
 }
 
 std::string getLineInput(){
@@ -99,7 +99,7 @@ static int exec_prog(const char **argv)
             return -1;
         }
     }
-
+    wait(&my_pid);
 #ifdef WAIT_FOR_COMPLETION
     timeout = 1000;
 
